@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+  Name: Maia Han
+  Date: Oct 15, 2022
+  Section: CSE 154 AC
+  TA: Allison Ho
+  This is the index.html page for my biodiversity calculator tool.
+  -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js" defer></script>
+    <title>CP2 Biodiversity Calculator</title>
+  </head>
+  <body>
+    <section class="middlepart">
+      <section id="leftpart">
+        <article id="calculator-container">
+          <h1>Biodiversity Calculator</h1>
+          <div id="intro">
+            Label species and enter numbers:
+          </div>
+          <hr>
+          <div id="calculator">
+            <div class="calculator-row">
+              <div class="rowname"><input class="name-input"
+                placeholder="Species" type="text"></div>
+              <input aria-label="Species" class="calculator-input" type="number" min="0">
+            </div>
+            <div class="calculator-row">
+              <div class="rowname"><input  class="name-input"
+                placeholder="Species" type="text"></div>
+              <input aria-label="Species" class="calculator-input" type="number" min="0">
+            </div>
+          </div>
+          <div id="changerows">
+            <h1><button type="button" id="btnaddrow">+ Row</button></h1>
+            <h1><button type="button" id="btndelrow">- Row</button></h1>
+          </div>
+        </article>
+        <article id="result-container">
+          <h1><button type="button" id="btnresult">Result</button></h1>
+          <p>Shannon diversity index: <span id="shannonresult"></span></p>
+          <p>Diversity evenness: <span id="evennessresult"></span></p>
+          <p>Diversity richness: <span id="richnessresult"></span></p>
+          <p>Total individual: <span id="totalresult"></span></p>
+        </article>
+      </section>
+      <section id="rightpart">
+        <header>
+          <h2>Introduction</h2>
+          <h3>What is Shannon Diversity Index?</h3>
+        </header>
+        <p>
+          The Shannon Diversity Index (sometimes called the Shannon-Wiener Index)
+          is a way to measure the diversity of species in a community.
+          Denoted as H, this index is calculated as:
+          <strong>H = -Σpi * ln(pi)</strong> where:
+        </p>
+        <ul>
+          <li>
+            <span class="greekletter">
+            <strong>Σ:</strong> A Greek symbol that means “sum”
+            </span>
+          </li>
+          <li><span class="greekletter"><strong>ln:</strong> Natural log</span></li>
+          <li><span class="greekletter"><strong>pi:</strong> The proportion of the
+            entire community made up of species <em>i</em></span>
+          </li>
+        </ul>
+        <p>
+          The higher the value of H, the higher the diversity
+          of species in a particular community.
+          The lower the value of H, the lower the diversity. A value of H = 0
+          indicates a community that only has one species.
+        </p>
+        <h3>How to interpret the Shannon diversity index?</h3>
+        <p>
+          The higher the index, the more diverse the species are in the habitat.
+          If the index equals 0, only one species is present in the community.
+          It may be easier to interpret the result if you calculate the
+          evenness: <strong>E = H / ln(k)</strong>,
+          where k is the number of species. Evenness gives you a value between
+          0 and 1 (so you can think of it as a percentage). Remember:
+          a habitat's diversity increases when its evenness becomes closer to 1.
+        </p>
+      </section>
+    </section>
+    <section>
+      <footer> Create By Maia Han 2022</footer>
+    </section>
+  </body>
+</html>
